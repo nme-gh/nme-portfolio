@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nuran Esen | Portfolio | @ViewBag.Title</title>
+<!--
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+-->
+    <!-- Bootstrap Core CSS -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="~/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- My Portfolio CSS -->
+    <link href="~/css/portfolio.css" rel="stylesheet" type="text/css">
+
+    <link href="~/vendor/SyntaxHighlighter/css/shCore.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/vendor/SyntaxHighlighter/css/shThemeDefault.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/styles/shThemeMidnight.css" rel="stylesheet" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                @Html.ActionLink("NME", "Index", null, htmlAttributes: new { @class = "navbar-brand" })
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Home", "Index")
+                    </li>
+                    <li>
+                        @Html.ActionLink("About", "About")
+                    </li>
+                    <li>
+                        @Html.ActionLink("My Works", "Portfolio")
+                    </li>
+                    @*<li>
+                        @Html.ActionLink("Contact", "Contact")
+                    </li>*@
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    @RenderBody()
+
+    <div class="content">
+        @if (IsSectionDefined("MainContent"))
+        {
+            <div class="main-content">
+                @RenderSection("MainContent", false)
+            </div>
+        }
+    </div>
+
+    <br/>
+    <hr />
+    <footer>
+        <div>
+            <p class="copyright text-muted">&copy; @DateTime.Now.Year NME All Rights Reserved</p>
+        </div>
+    </footer>
+
+<!--
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+-->
+
+    <!-- *** jQuery *** -->
+    <!-- Including jQuery -->
+    <!--
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    -->
+    <!-- Referencing jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+    <!-- *** Bootstrap Core JavaScript *** -->
+    <!-- Hosting Bootstrap -->
+    <!--
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    -->
+    <!-- Including/Referencing Bootstrap from a CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- *** Contact Form JavaScript *** -->
+    <script src="~/js/jqBootstrapValidation.js"></script>
+    <script src="~/js/contact_me.js"></script>
+
+    <!-- *** Theme JavaScript *** -->
+    <script src="~/js/clean-blog.min.js"></script>
+
+    @* Including SyntaxHighlighter -- Begin *@
+    <script type="text/javascript" src="~/vendor/SyntaxHighlighter/js/shCore.js"></script>
+    <script type="text/javascript" src="~/vendor/SyntaxHighlighter/js/shBrushJScript.js"></script>
+
+    <script type="text/javascript">
+        SyntaxHighlighter.all()
+    </script>
+    @* Including SyntaxHighlighter -- Finish *@
+
+    <script type='text/javascript' src='~/Scripts/script.js'></script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+﻿
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>My Portfolio</h1>
+                    <hr class="small">
+                    <span class="subheading">Some of the work I'm doing at Coder Foundry</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    @*<p>My different project buckets go in here in the BS Grid Columns</p>*@
+
+    <div class="row">
+        @* Offset the 1st <div> out of the total 3 in the grid for left margin! *@
+        <div class="col-sm-3 col-sm-offset-1" >
+            <!-- Trigger the modal with a button or an anchor link -->
+            <a href="" data-toggle="modal" data-target="#js_demos">
+                <img src="~/img/js.jpg" alt="JS" style="cursor:pointer">
+            </a>
+        </div>
+        <div class="col-sm-3" > @* style="background-color:lavenderblush;" *@
+            <a href="http://nesen-bugtracker.azurewebsites.net/"  target="_blank">
+                <img src="~/img/bug_tracking.jpg" alt="BUGTRACKER" style="cursor:pointer" />
+            </a>
+        </div>
+        <div class="col-sm-3" >  @* style="background-color:lavender;" *@
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="js_demos" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" id="palclosebtntab">&times;</button>
+                    <h3 class="modal-title">JS / jQuery Demonstrations</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div>
+                            <ul class="nav nav-tabs" id="js_demosTabs">
+                                <li class="active"><a data-toggle="tab" href="#numfun">5 Number Fun</a></li>
+                                <li><a data-toggle="tab" href="#factorial">Factorial</a></li>
+                                <li><a data-toggle="tab" href="#fizzbuzz">FizzBuzz</a></li>
+                                <li><a data-toggle="tab" href="#palindrome">Palindrome</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div id="numfun" class="tab-pane fade in active">
+                                    <h4>5 NUMBER FUN</h4>
+                                    <div class="col-sm-6">
+                                        <p>Please enter a positive whole number in each box.</p>
+                                        <p>This excercise will display some fun facts about your numbers.</p>
+                                        <p>
+                                            <input type="number" name="integer1" required="required"/>
+                                            <br /><br />
+                                            <input type="number" name="integer2" required="required"/>
+                                            <br /><br />
+                                            <input type="number" name="integer3" required="required"/>
+                                            <br /><br />
+                                            <input type="number" name="integer4" required="required"/>
+                                            <br /><br />
+                                            <input type="number" name="integer5" required="required"/>
+                                            <br /><br />
+                                            <span id="5numbererror" style="color:red"></span><br />
+                                            <input type="submit" id="5numberbtn" value="Here the Number Facts!"><br />
+                                            <br /><br />
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <br/>
+                                        <div id="min"></div><br />
+                                        <div id="max"></div><br />
+                                        <div id="sum"></div><br />
+                                        <div id="mean"></div><br />
+                                        <div id="product"></div><br />
+                                    </div>
+                                </div> @* div for tab id #numfun *@
+
+                                <div id="factorial" class="tab-pane fade">
+                                    <h4>FACTORIALS</h4>
+                                    <div class="col-md-6">
+                                        <p>Please enter a positive whole number in the box.</p>
+                                        <p>This excercise will display the factorial of your number.</p>
+                                        <p>
+                                            <input type="number" id="factorinput" required="required" />
+                                            <br /><br />
+                                            <span id="factorerror" style="color:red"></span><br />
+                                            <input type="submit" id="factorbtn" value="Submit">
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br />
+                                        <h3 id="factorresult"></h3>
+                                        <br /><br />
+                                    </div>
+                                </div> @* div for tab id #factorial *@
+
+                                <div id="fizzbuzz" class="tab-pane fade">
+                                    <h4>FIZZBUZZ</h4>
+                                    <div class="col-md-6">
+                                        <p>Please enter a whole number in each box, between 1 and 100.</p>
+                                        <p>This exercise will print all numbers 1-100, replacing multiples of the first with the word 'Fizz', multiples of the second with 'Buzz', and multiples of both with 'FizzBuzz'</p>
+                                        <p>
+                                            <input type="number" id="fizzinput1" required="required" />
+                                            <br /><br />
+                                            <input type="number" id="fizzinput2" required="required" />
+                                            <br /><br />
+                                            <span id="fizzerror" style="color:red"></span><br />
+                                            <input type="submit" id="fizzbtn" value="Click to get buzzing" />
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br />
+                                        <p id="fizzresult"></p>
+                                        <br /><br />
+                                    </div>
+                                </div> @* div for tab id #fizzbuzz *@
+
+                                <div id="palindrome" class="tab-pane fade">
+                                    <h4>PALINDROMES</h4>
+                                    <div class="col-md-6">
+                                        <p>Please enter any string of letters and numbers. Spaces, special characters and capitalization do not matter.</p>
+                                        <p>This exercise will examine the string and determine if it's the same when reversed, aka a Palindrome.</p>
+                                        <p>
+                                            <input type="text" id="palinputtab" maxlength="300" placeholder="Your string goes here!" />
+                                            <br /><br />
+                                            <span id="palerrortab" style="color:red"></span><br />
+                                            <input type="submit" id="palbtntab" value="Palindrome?" />
+                                        </p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br />
+                                        <h3 id="paltruetab"></h3>
+                                        <br /><br />
+                                    </div>
+                                    @*<pre id="jsfuncsyntax" class="brush: js" title="Below is the code snippet, check it out!">
+    <!-- This copy/pasted code here uses SyntaxHighlighter.all() in the Layout.cshtml -->
+        $('#palbtntab').click(function checkPalindrome2() {
+            var str = $('#palinputtab').val();
+            if ($.trim($("#paltruetab").text()) != "") {
+                $("#paltruetab").empty();
+            }
+            ...
+            ...
+        });
+                                        </pre>*@
+                                </div>  @* div for tab id #palindrome *@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="preholder"></div>
+                </div>
+            </div>  @* Modal content *@
+        </div>
+    </div>  @* Modal *@
+
+</div>
+
+@*<br/>
+@section MainContent{
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <strong>@ViewBag.Message</strong>
+            </div>
+        </div>
+    </div>
+}*@
